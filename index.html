@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            color: #ff6b6b;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .message {
+            line-height: 1.6;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: heartFloat 4s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes heartFloat {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .signature {
+            font-style: italic;
+            color: #ff6b6b;
+            font-size: 1.3rem;
+            margin-top: 1rem;
+        }
+
+        .ribbon {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            overflow: hidden;
+        }
+
+        .ribbon::before {
+            content: 'Best Friends';
+            position: absolute;
+            width: 200px;
+            height: 40px;
+            background: #ff6b6b;
+            transform: rotate(-45deg) translateX(-70px) translateY(-20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts">
+        <!-- Adding floating hearts -->
+        <script>
+            for(let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 4 + 's';
+                heart.innerHTML = '❤️';
+                document.querySelector('.hearts').appendChild(heart);
+            }
+        </script>
+    </div>
+
+    <div class="card">
+        <div class="ribbon"></div>
+        <h1>Dear Harshi 💖</h1>
+        <div class="message">
+            <p>To my amazing best friend who lights up my world! 🌟</p>
+            <p>Thank you for being the sunshine on my cloudy days, the shoulder I can always lean on, and the sister I found in friendship. You make every moment special with your presence, and I'm incredibly grateful to have you in my life.</p>
+            <p>Your kindness, your laughter, and your beautiful soul make our friendship truly precious. Here's to countless more memories, endless laughter, and a friendship that grows stronger with each passing day!</p>
+            <p>You're not just my best friend - you're my soul sister! 👯‍♀️</p>
+        </div>
+        <div class="signature">
+            With love and hugs,<br>
+            Your Bestie Forever ✨
+        </div>
+    </div>
+</body>
+</html>
